@@ -4,9 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="2022-06-30 日志, Hexo">
-    <meta name="description" content="读取数据集时，训练数据和标签数据读入顺序不匹配inp_files = sorted(os.listdir(os.path.join(rgb_dir, &#39;input&#39;)),key=lambda x: int(x[7:-6]))
-tar_fil">
+    <meta name="keywords" content="2022-07-30 日志, Hexo">
+    <meta name="description" content="进制
+基本介绍: 整数四种表达方式:
+
+
+二进制: 0,1; 满2进1; 以0b或0B开头十进制: 0-9; 满10进1.八进制: 0-7; 满8进1, 以数字0开头十六进制: 0-9, 以及A(10)到F(15). 满16进1, 以0x或">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +21,7 @@ tar_fil">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>2022-06-30 日志 | Hexo</title>
+    <title>2022-07-30 日志 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -315,12 +318,12 @@ tar_fil">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">2022-06-30 日志</h1>
+                    <h1 class="description center-align post-title">2022-07-30 日志</h1>
                 </div>
             </div>
         </div>
@@ -344,8 +347,8 @@ tar_fil">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%97%A5%E5%BF%97/">
-                                <span class="chip bg-color">日志</span>
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">java</span>
                             </a>
                         
                     </div>
@@ -360,7 +363,7 @@ tar_fil">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-06-30
+                    2022-07-30
                 </div>
                 
 
@@ -369,14 +372,14 @@ tar_fil">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 
@@ -399,154 +402,241 @@ tar_fil">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="读取数据集时，训练数据和标签数据读入顺序不匹配"><a href="#读取数据集时，训练数据和标签数据读入顺序不匹配" class="headerlink" title="读取数据集时，训练数据和标签数据读入顺序不匹配"></a>读取数据集时，训练数据和标签数据读入顺序不匹配</h2><pre class="line-numbers language-none"><code class="language-none">inp_files = sorted(os.listdir(os.path.join(rgb_dir, 'input')),key=lambda x: int(x[7:-6]))
-tar_files = sorted(os.listdir(os.path.join(rgb_dir, 'target')),key=lambda x: int(x[7:-4]))
+                <h1 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h1><ul>
+<li>基本介绍: 整数四种表达方式:</li>
+</ul>
+<blockquote>
+<p>二进制: 0,1; 满2进1; 以<code>0b</code>或<code>0B</code>开头<br>十进制: 0-9; 满10进1.<br>八进制: 0-7; 满8进1, 以数字<code>0</code>开头<br>十六进制: 0-9, 以及A(10)到F(15). 满16进1, 以<code>0x</code>或<code>0X</code>开头表示, A-F不区分大小写</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//十进制:</span>
+<span class="token keyword">int</span> n1 <span class="token operator">=</span> <span class="token number">11</span>
+<span class="token comment">//十六进制</span>
+<span class="token keyword">int</span> n2<span class="token operator">:</span> <span class="token number">0xB</span>
+<span class="token comment">//八进制</span>
+<span class="token keyword">int</span> n3 <span class="token operator">=</span> <span class="token number">013</span>
+<span class="token comment">//二进制</span>
+<span class="token keyword">int</span> n4 <span class="token operator">=</span> <span class="token number">0b1011</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-self.inp_filenames = [os.path.join(rgb_dir, 'input', x)  for x in inp_files if is_image_file(x)]
-self.tar_filenames = [os.path.join(rgb_dir, 'target', x) for x in tar_files if is_image_file(x)]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46109590/article/details/114235237">链接</a></p>
-<h2 id="loss函数报错"><a href="#loss函数报错" class="headerlink" title="loss函数报错"></a>loss函数报错</h2><pre class="line-numbers language-none"><code class="language-none">RuntimeError: Cant call numpy() on Variable that requires grad. Use var.detach().numpy() instead.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>这一步报错代码在计算loss，有效解决方法是降低numpy的版本，原始版本1.21.4 降至 1.18.0</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43904899/article/details/121749291">链接</a></p>
-<h2 id="训练模型时爆显存"><a href="#训练模型时爆显存" class="headerlink" title="训练模型时爆显存"></a>训练模型时爆显存</h2><p>引发pytorch：CUDA out of memory错误的原因有两个：</p>
-<p>​	<strong>1.当前要使用的GPU正在被占用，导致显存不足以运行你要运行的模型训练命令不能正常运行</strong></p>
-<p>解决方法：</p>
+<h4 id="转成十进制"><a href="#转成十进制" class="headerlink" title="转成十进制"></a>转成十进制</h4><hr>
+<h6 id="二进制转十进制"><a href="#二进制转十进制" class="headerlink" title="二进制转十进制:"></a>二进制转十进制:</h6><ul>
+<li><strong>从最低位(右边)开始, 将每个位上的数提取出来, 乘以2的(位数-1)次方, 然后求和</strong><br> <code>0b1011</code><br> $$ 0b1011 = 1<em>2^{1-1}+1</em>2^{2-1}+0<em>2^{3-1}+1</em>2{4-1} = 1+2+0+8 = 11 $$</li>
+</ul>
+<h6 id="八进制转十进制"><a href="#八进制转十进制" class="headerlink" title="八进制转十进制"></a>八进制转十进制</h6><ul>
+<li><strong>从最低位(右边)开始, 将每个位上的数提取出来, 乘以8的(位数-1)次方, 然后求和</strong><br> <code>0234</code><br> $$ 0234 = 4<em>8^0 +3</em>8^1+2*8^2=4+24+128=156 $$</li>
+</ul>
+<h6 id="十六进制转十进制"><a href="#十六进制转十进制" class="headerlink" title="十六进制转十进制"></a>十六进制转十进制</h6><p><code>0x23A</code></p>
+<ul>
+<li><strong>从最低位(右边)开始, 将每个位上的数提取出来, 乘以16的(位数-1)次方, 然后求和</strong><br> $$ 0x23A = 10*16^0+3 * 16 ^ 1 + 2 * 16^2 = 10 + 48 + 512 = 570 $$</li>
+</ul>
+<hr>
+<h4 id="十进制转其他进制"><a href="#十进制转其他进制" class="headerlink" title="十进制转其他进制"></a>十进制转其他进制</h4><hr>
+<h6 id="十进制转二进制"><a href="#十进制转二进制" class="headerlink" title="十进制转二进制"></a>十进制转二进制</h6><ul>
+<li>规则:  <ul>
+<li><strong>将该数不断的除以2, 直到商为0.</strong></li>
+<li><strong>之后把每步得到的余数倒过来, 就是对应的二进制数</strong></li>
+</ul>
+</li>
+<li>具体案例: 把 34 转换成二进制<ul>
+<li><img src="/Users/wangrundong/Documents/GitHub/Java_study_blog/note/pic/10.jpg" alt="10"></li>
+<li>$34/2 = 17, 余0$</li>
+<li>$17/2 = 8, 余1$</li>
+<li>$8/2=4, 余0$</li>
+<li>$4/2=2, 余0$</li>
+<li>$2/2=1, 余0$</li>
+</ul>
+</li>
+<li>把所有的数倒着看, 放在一起, 就成了: </li>
+<li><code>0b100010</code></li>
+</ul>
+<h6 id="十进制转八进制"><a href="#十进制转八进制" class="headerlink" title="十进制转八进制"></a>十进制转八进制</h6><ul>
+<li>规则:<ul>
+<li><strong>将该数不断除以8，直到商为 0 为止．</strong></li>
+<li><strong>然后将每步得到的余数倒过来，就是对应的八进制</strong></li>
+</ul>
+</li>
+<li>具体案例：把131转成八进制<ul>
+<li>具体做法同上</li>
+<li>$131/8=16, 余3$</li>
+<li>$16/8=2, 余0$</li>
+<li>$2/8, 没法做$</li>
+</ul>
+</li>
+<li>把所有的数倒着看, 放在一起, 就成了: <ul>
+<li>0203</li>
+</ul>
+</li>
+</ul>
+<h6 id="十进制转十六进制"><a href="#十进制转十六进制" class="headerlink" title="十进制转十六进制"></a>十进制转十六进制</h6><ul>
+<li>规则<ul>
+<li><strong>将该数不断除以 16，直到商为 0 为止.</strong></li>
+<li><strong>然后将每步得到的余数倒过来，就是对应的十六进制。</strong></li>
+</ul>
+</li>
+<li>具体案例: 把237转换成十六进制<ul>
+<li>具体做法同上. </li>
+<li>$237/16=14,余13$</li>
+</ul>
+</li>
+</ul>
+<h6 id="二进制转换成八进制"><a href="#二进制转换成八进制" class="headerlink" title="二进制转换成八进制"></a>二进制转换成八进制</h6><ul>
+<li>规则: <ul>
+<li><strong>从低位开始,将二进制数每三位一组，转成对应的八进制数即可</strong></li>
+</ul>
+</li>
+<li>具体案例: 把0b11010101转换成八进制<ul>
+<li>ob11(3)010(2)101(5) =&gt; 0325</li>
+</ul>
+</li>
+</ul>
+<h6 id="二进制转换成十六进制"><a href="#二进制转换成十六进制" class="headerlink" title="二进制转换成十六进制"></a>二进制转换成十六进制</h6><ul>
+<li>规则: <ul>
+<li><strong>从低位开始，将二进制数每四位一组，转成对应的十六进制数即可</strong></li>
+</ul>
+</li>
+<li>具体案例: 把0b11010101转换成十六进制<ul>
+<li>0b1101(D)0101(5) = 0xD5</li>
+</ul>
+</li>
+</ul>
+<h6 id="八进制数转换成二进制"><a href="#八进制数转换成二进制" class="headerlink" title="八进制数转换成二进制"></a>八进制数转换成二进制</h6><ul>
+<li>规则: <ul>
+<li><strong>将八进制数每 1 位，转成对应的一个 3 位的二进制数即可</strong></li>
+</ul>
+</li>
+<li>具体案例: 0237 转换成二进制<ul>
+<li>02(010)3(011)7(111) = 0b10011111</li>
+</ul>
+</li>
+</ul>
+<h6 id="十六进制数转换成二进制"><a href="#十六进制数转换成二进制" class="headerlink" title="十六进制数转换成二进制"></a>十六进制数转换成二进制</h6><ul>
+<li>规则: <ul>
+<li><strong>将十六进制数每 1 位，转成对应的 4 位的一个二进制数即可</strong></li>
+</ul>
+</li>
+<li>具体案例: 把0x23B转换成二进制<ul>
+<li>0x2(0010)3(0011)B(1011) = 0b1000111011</li>
+</ul>
+</li>
+</ul>
+<h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><h3 id="二进制再运算中的说明"><a href="#二进制再运算中的说明" class="headerlink" title="二进制再运算中的说明"></a>二进制再运算中的说明</h3><ol>
+<li>二进制是风二进位的进位制, 0,1是基本算符</li>
+<li>现代计算机技术全部采用的是二进制, 因为它只是要0,1两个数字符号, 非常方便简单. 计算机内部数据信息都是采用二进制数来表示的</li>
+</ol>
+<h3 id="原码-反码-补码"><a href="#原码-反码-补码" class="headerlink" title="原码, 反码, 补码"></a><strong><em>原码, 反码, 补码</em></strong></h3><ul>
+<li>对于有符号的而言:</li>
+</ul>
 <ol>
-<li>换另外的GPU</li>
-<li>kill 掉占用GPU的另外的程序（慎用！因为另外正在占用GPU的程序可能是别人在运行的程序，如果是自己的不重要的程序则可以kill）命令行中输入以下命令，可以查看当前正在GPU运行的程序：</li>
+<li>二进制的最高位是符号位; 0表示正数, 1 表示负数.</li>
+<li>正数的原码, 反码, 补码都一样</li>
+<li>负数的反码 = 它的原码符号位不变, 其他位取反(0-&gt;,1-&gt;0)</li>
+<li>负数的补码= 它的反码+1, 负数的反码= 负数的补码-1</li>
+<li>0的反码, 补码都是0</li>
+<li>java没有无符号数(Java的数都是有符号的)</li>
+<li>计算机在运行的时候, 都是以<strong>补码的方式</strong>来运算的</li>
+<li>当我们在看运算结果的时候, 要看它的原码</li>
 </ol>
-<pre class="line-numbers language-none"><code class="language-none">nvidia-smi
-ps -f -p 12345 //你自己的要查询的pid
-ps -f -p 进程号 
-# ps -f -p 5014
-UID        PID  PPID  C STIME TTY          TIME CMD
-root      5014     1  0 17:26 ?        00:00:00 /usr/local/apache/bin/httpd -k 
-kill 12345
+<h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><ul>
+<li>java中由七个位运算符(<code>&amp;</code>, <code>|</code>, <code>^</code>, <code>~</code>, <code>&gt;&gt;</code>, <code>&lt;&lt;</code>, <code>&gt;&gt;&gt;</code>)<ul>
+<li>分别是按位与<code>&amp;</code>, 按位或<code>|</code>, 按位异或<code>^</code>, 按位取反<code>~</code></li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>位运算符</th>
+<th>运算规则</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>按位与<code>&amp;</code></td>
+<td>两位全为1, 结果位1, 否则为0</td>
+</tr>
+<tr>
+<td>按位或`</td>
+<td>`</td>
+</tr>
+<tr>
+<td>按位异或<code>^</code></td>
+<td>两位一个为0, 一个为1, 否则为0</td>
+</tr>
+<tr>
+<td>按位取反<code>~</code></td>
+<td>0 -&gt;1, 1-&gt;0</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>[!NOTE]<br>两个二进制数, 上下进行运算+判断</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> bitoperator <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">&amp;</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 1. 首先得到2的补码 =&gt; 2的原码为 00000000 00000000 00000000 00000010</span>
+        <span class="token comment">// 因为int存储了4个字节, 所有前面有这么多的0</span>
+        <span class="token comment">//  由此,得到补码: 00000000 00000000 00000000 00000010</span>
+        <span class="token comment">//  因为2是正数, 所以它的原码, 补码, 反码都一样</span>
+        <span class="token comment">// 2. 3的原码: 00000000 00000000 00000000 00000011</span>
+        <span class="token comment">//  同理易证: 3的补码也是00000000 00000000 00000000 00000011</span>
+        <span class="token comment">// 3. 按位与&amp;: 00000000 00000000 00000000 00000010</span>
+        <span class="token comment">//             00000000 00000000 00000000 00000011</span>
+        <span class="token comment">//           = 00000000 00000000 00000000 00000010</span>
+        <span class="token comment">//             因为运算出的数正好是个整数, 运算后的原码也就就是结果</span>
 
-强制杀死进程
-kill -KILL 123456<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token operator">~</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 得数为1</span>
+        <span class="token comment">// 先得到 -2的原码: 10000000 00000000 00000000 00000010</span>
+        <span class="token comment">// 第一位负号位</span>
+        <span class="token comment">// 2. 因为负数的补码是反码+1, 所以先得到反码再说</span>
+        <span class="token comment">// -2反码 = 11111111 11111111 11111111 11111101</span>
+        <span class="token comment">// 3. -2 的补码 = 反码+1</span>
+        <span class="token comment">// 也就是说等于: 11111111 11111111 11111111 11111110</span>
+        <span class="token comment">// ~-2操纵: 00000000 00000000 00000000 000000001这是运算后发补码</span>
+        <span class="token comment">// 运算后因为是整数, 所以答案就是00000000 00000000 00000000 000000001</span>
 
-<p>​	<strong>2.可能是你要训练的模型所设置的batch-size太大了，GPU的显存满足不了</strong></p>
-<p>解决方法：</p>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token operator">~</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 得到2 的补码: 00000000 00000000 00000000 00000010</span>
+        <span class="token comment">// 按位取反: 11111111 11111111 11111111 11111101</span>
+        <span class="token comment">// 运算后看原码: 11111111 11111111 11111111 11111100(也就是-1)</span>
+        <span class="token comment">// 运算后的原码: 10000000 00000000 00000000 00000011 = -3</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">|</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 得到2的补码: 00000000 00000000 00000000 00000010</span>
+        <span class="token comment">// 得到3的补码: 00000000 00000000 00000000 00000011</span>
+        <span class="token comment">// 按位或: 00000000 00000000 00000000 00000010</span>
+        <span class="token comment">//         00000000 00000000 00000000 00000011</span>
+        <span class="token comment">//         00000000 00000000 00000000 00000011 </span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 得到2的补码: 00000000 00000000 00000000 00000010</span>
+        <span class="token comment">// 得到3的补码: 00000000 00000000 00000000 00000011</span>
+        <span class="token comment">// 按位异或:    00000000 00000000 00000000 00000001 = 1</span>
+    <span class="token punctuation">}</span>
+    
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <ul>
-<li>把batch-size调小一些，如设置常用的256 128 64 32 16等</li>
+<li>还有三个位运算符: <code>&gt;&gt;</code>, <code>&lt;&lt;</code>, <code>&gt;&gt;&gt;</code><ul>
+<li>算数右移<code>&gt;&gt;</code>: <strong>低位溢出, 符号位不变, 并用符号位补溢出的高位</strong></li>
+<li>算数左移<code>&lt;&lt;</code>: <strong>符号位不变, 低位补0</strong></li>
+<li>逻辑右移<code>&gt;&gt;&gt;</code> __ 低位溢出, 高位补0__</li>
+<li>没有<code>&lt;&lt;&lt;</code></li>
 </ul>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/universe_R/article/details/124551674">链接</a></p>
-<h2 id="docker重启参数–restart-x3D-always的作用"><a href="#docker重启参数–restart-x3D-always的作用" class="headerlink" title="docker重启参数–restart=always的作用"></a>docker重启参数–restart=always的作用</h2><h3 id="一、启动时候添加参数"><a href="#一、启动时候添加参数" class="headerlink" title="一、启动时候添加参数"></a>一、启动时候添加参数</h3><p>   –restart=always参数能够使我们在重启docker时，自动启动相关容器。<br>Docker容器的重启策略如下：</p>
-<ul>
-<li>no，默认策略，在容器退出时不重启容器</li>
-<li>on-failure，在容器非正常退出时（退出状态非0），才会重启容器</li>
-<li>on-failure:3，在容器非正常退出时重启容器，最多重启3次</li>
-<li>always，在容器退出时总是重启容器</li>
-<li>unless-stopped，在容器退出时总是重启容器，但是不考虑在Docker守护进程启动时就已经停止了的容器</li>
-</ul>
-<h3 id="二、命令修改"><a href="#二、命令修改" class="headerlink" title="二、命令修改"></a>二、命令修改</h3><p>在启动时如果没有添加这个参数怎么办呢，比如1a7a3b5112fd这个容器在启动的时候是没有添加–restart=always参数的，针对这种情况我们可以使用命令进行修改。<code>docker container update --restart=always 容器名字</code></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bjywxc/article/details/103530262">链接</a></p>
-<h2 id="docker容器中分布式训练报错，显存不足"><a href="#docker容器中分布式训练报错，显存不足" class="headerlink" title="docker容器中分布式训练报错，显存不足"></a>docker容器中分布式训练报错，显存不足</h2><ol>
-<li><p>在容器中查看共享内存大小</p>
-<pre class="line-numbers language-scripts" data-language="scripts"><code class="language-scripts">df -h | grep shm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>一般原始大小为64M，这是远远不够的</p>
-</li>
-<li><p>关闭docker</p>
-<pre class="line-numbers language-scripts" data-language="scripts"><code class="language-scripts">service docker stop<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>进入宿主机中修改hostconfig.json</p>
-<pre class="line-numbers language-none"><code class="language-none">具体修改步骤如下
-
-1、使用 docker ps -a 命令找到要修改容器的 CONTAINER ID
-
-2、运行 docker inspect 【CONTAINER ID】 | grep Id 命令  //我这里没有显示到需要的目录id
-
-3、执行 cd /var/lib/docker/containers 命令进入找到与 Id 相同的目录<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>将ShmSize后面加个“22”大概扩大了100倍</p>
-</li>
-<li><p>重启docker</p>
-<pre class="line-numbers language-none"><code class="language-none">service docker stop<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/shmily_lsl/article/details/81166951">链接</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3ba9a016dc82">链接</a></p>
-</li>
-</ol>
-<h2 id="numpy去除元素全为零的行或列"><a href="#numpy去除元素全为零的行或列" class="headerlink" title="numpy去除元素全为零的行或列"></a>numpy去除元素全为零的行或列</h2><ul>
-<li><p>np.all() 所有元素不为零或空或False，返回True</p>
-<pre class="line-numbers language-none"><code class="language-none">import numpy as np
-a=np.array([0,1,2,0,3,4,0,5,6,0,0,0,0,0,0]).reshape(5,3)
-#去除全零行
-print(a[[not np.all(a[i] == 0) for i in range(a.shape[0])], :])
-[[0 1 2]
- [0 3 4]
- [0 5 6]]
-#去除全零列
-print(a[:, [not np.all(a[:, i] == 0) for i in range(a.shape[1])]])
-[[1 2]
- [3 4]
- [5 6]
- [0 0]
- [0 0]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>请注意某行或列元素是否存在和为零的情况</p>
-<pre class="line-numbers language-none"><code class="language-none">import numpy as np
-a=np.array([0,1,2,0,3,4,0,5,6,0,0,0,0,0,0]).reshape(5,3)
-
-a
-array([[0, 1, 2],
-       [0, 3, 4],
-       [0, 5, 6],
-       [0, 0, 0],
-       [0, 0, 0]])
-
-#去除全零行
-a[a.sum(axis=1)!=0,:]
-array([[0, 1, 2],
-       [0, 3, 4],
-       [0, 5, 6]])
-
-#去除全零列
-
-a[:,a.sum(axis=0)!=0]
-array([[1, 2],
-       [3, 4],
-       [5, 6],
-       [0, 0],
-       [0, 0]])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/7f9fd17c8662">链接</a></p>
 </li>
 </ul>
-<h2 id="python读取文件名及后缀"><a href="#python读取文件名及后缀" class="headerlink" title="python读取文件名及后缀"></a>python读取文件名及后缀</h2><ul>
-<li><p><strong>os.listdir</strong>()</p>
-<p>语法：<code>os.listdir(path)</code></p>
-<p>函数用途：输出路径下所有文件的文件名</p>
-<p><strong>结果分析</strong>：</p>
-<p><code>os.listdir</code> 以列表的形式返回指定文件夹的下所有内容，不管是文件还是文件夹</p>
-</li>
-<li><p><strong>os.path.splitext</strong>()</p>
-<p>语法：<code>os.path.splitext(文件名)</code></p>
-<p>函数用途：将文件名和扩展名分开。</p>
-<p><strong>结果分析</strong>：</p>
-<p>就是以文件名中的’.’作为分隔符，分隔文件名称与文件后缀，以元组的形式返回文件名与后缀。</p>
-</li>
-<li><p><strong>os.path.split()</strong></p>
-<p>语法：<code>os.path.split(path)</code></p>
-<p>函数用途：返回文件的路径和文件名。</p>
-<p><strong>结果分析</strong>：</p>
-<p>就是以路径最后一个’/‘或者’\‘为分隔，以元祖的形式返回路径与文件名，若只有文件名，则输出文件名与空。</p>
-<h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><p>通过listdir()获得该文件夹下所有文件名，使用splitext()分离文件名和后缀，判断文件名最后一个是否为d,后缀是否为lib</p>
-<pre class="line-numbers language-none"><code class="language-none">import os
-path = "E:/vs_code/qtVideo/lib"
-datanames = os.listdir(path)
-for i in datanames:
-    if os.path.splitext(i)[1]=='.lib' and  os.path.splitext(i)[0][-1]=='d':
-        print(i)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> bitoperator02 <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">&gt;&gt;</span><span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// // 1 = 00000000 00000000 00000000 00000001</span>
+        <span class="token comment">// 其本质就是把最后两位的有01和1扔出去, 再用符号位(前两位)来进行补全</span>
+        <span class="token comment">// 进行运算后: a = 00000000 00000000 00000000 00000000 = 0</span>
+        <span class="token comment">// 也就是说: 1/2/2</span>
 
-<p>可以看到我们把文件中的d.lib的文件都已经筛选出来了</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/nienelong3319/article/details/107048970">链接</a></p>
-</li>
-</ul>
+        <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// 00000001 = 1</span>
+        <span class="token comment">// 本质就是1*2*2, 也就是说: 00000100</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">&lt;&lt;</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 512 = 2 * 2^8</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -573,7 +663,7 @@ for i in datanames:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://kdxy2233.github.io/2022/06/30/2022-6-30/">https://kdxy2233.github.io/2022/06/30/2022-6-30/</a>
+                    <a href="https://kdxy2233.github.io/2022/07/30/jin-zhi/">https://kdxy2233.github.io/2022/07/30/jin-zhi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -611,8 +701,8 @@ for i in datanames:
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%97%A5%E5%BF%97/">
-                                    <span class="chip bg-color">日志</span>
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">java</span>
                                 </a>
                             
                         </div>
@@ -695,13 +785,13 @@ for i in datanames:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/07/04/2022-7-4/">
+                <a href="/2022/08/01/lei-yu-dui-xiang-oop/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="2022-07-04 日志">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="2022-08-01 日志">
                         
-                        <span class="card-title">2022-07-04 日志</span>
+                        <span class="card-title">2022-08-01 日志</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -712,7 +802,7 @@ for i in datanames:
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-04
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-01
                         </span>
                         <span class="publish-author">
                             
@@ -725,8 +815,8 @@ for i in datanames:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%97%A5%E5%BF%97/">
-                        <span class="chip bg-color">日志</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
@@ -740,13 +830,13 @@ for i in datanames:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/06/30/lun-wen-bi-ji-mo-ban/">
+                <a href="/2022/07/18/2022-7-18/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="论文笔记模板">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="2022-07-18 日志">
                         
-                        <span class="card-title">论文笔记模板</span>
+                        <span class="card-title">2022-07-18 日志</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -757,7 +847,7 @@ for i in datanames:
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-18
                             </span>
                         <span class="publish-author">
                             
@@ -770,8 +860,8 @@ for i in datanames:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%BA%E6%96%87/">
-                        <span class="chip bg-color">论文</span>
+                    <a href="/tags/%E6%97%A5%E5%BF%97/">
+                        <span class="chip bg-color">日志</span>
                     </a>
                     
                 </div>

@@ -4,9 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="2022-06-30 日志, Hexo">
-    <meta name="description" content="读取数据集时，训练数据和标签数据读入顺序不匹配inp_files = sorted(os.listdir(os.path.join(rgb_dir, &#39;input&#39;)),key=lambda x: int(x[7:-6]))
-tar_fil">
+    <meta name="keywords" content="2022-08-01 日志, Hexo">
+    <meta name="description" content="类与对象(OOP)
+定义
+类是现实世界或思维世界中的实体在计算机中的反映，它将数据以及这些数据上的操作封装在一起。
+对象是具有类类型的变量。类和对象是面向对象编程技术中的最基本的概念
+
+
+关系
+类是对象的抽象，而对象是类的具体实例。类是抽象">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +24,7 @@ tar_fil">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>2022-06-30 日志 | Hexo</title>
+    <title>2022-08-01 日志 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -315,12 +321,12 @@ tar_fil">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">2022-06-30 日志</h1>
+                    <h1 class="description center-align post-title">2022-08-01 日志</h1>
                 </div>
             </div>
         </div>
@@ -344,8 +350,8 @@ tar_fil">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%97%A5%E5%BF%97/">
-                                <span class="chip bg-color">日志</span>
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">java</span>
                             </a>
                         
                     </div>
@@ -360,7 +366,7 @@ tar_fil">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-06-30
+                    2022-08-01
                 </div>
                 
 
@@ -369,14 +375,14 @@ tar_fil">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    4 分
                 </div>
                 
 
@@ -399,154 +405,184 @@ tar_fil">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="读取数据集时，训练数据和标签数据读入顺序不匹配"><a href="#读取数据集时，训练数据和标签数据读入顺序不匹配" class="headerlink" title="读取数据集时，训练数据和标签数据读入顺序不匹配"></a>读取数据集时，训练数据和标签数据读入顺序不匹配</h2><pre class="line-numbers language-none"><code class="language-none">inp_files = sorted(os.listdir(os.path.join(rgb_dir, 'input')),key=lambda x: int(x[7:-6]))
-tar_files = sorted(os.listdir(os.path.join(rgb_dir, 'target')),key=lambda x: int(x[7:-4]))
+                <h1 id="类与对象-OOP"><a href="#类与对象-OOP" class="headerlink" title="类与对象(OOP)"></a>类与对象(OOP)</h1><ul>
+<li><strong>定义</strong><ul>
+<li>类是现实世界或思维世界中的实体在计算机中的反映，它将数据以及这些数据上的操作封装在一起。</li>
+<li>对象是具有类类型的变量。类和对象是面向对象编程技术中的最基本的概念</li>
+</ul>
+</li>
+<li>关系<ul>
+<li>类是对象的抽象，而对象是类的具体实例。类是抽象的，不占用内存，而对象是具体的，占用存储空间。类是用于创建对象的蓝图，它是一个定义包括在特定类型的对象中的方法和变量的软件模板。</li>
+<li>类就是数据类型</li>
+<li>对象就是一个具体的实例</li>
+<li>属性是类的一个组成部分, 一般是数据类型, 也可以是可引用类型(对象, 数组)</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Object01</span> <span class="token punctuation">{</span> 
 
-self.inp_filenames = [os.path.join(rgb_dir, 'input', x)  for x in inp_files if is_image_file(x)]
-self.tar_filenames = [os.path.join(rgb_dir, 'target', x) for x in tar_files if is_image_file(x)]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	<span class="token comment">//编写一个main方法</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46109590/article/details/114235237">链接</a></p>
-<h2 id="loss函数报错"><a href="#loss函数报错" class="headerlink" title="loss函数报错"></a>loss函数报错</h2><pre class="line-numbers language-none"><code class="language-none">RuntimeError: Cant call numpy() on Variable that requires grad. Use var.detach().numpy() instead.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+		<span class="token comment">/*
+		张老太养了两只猫猫:一只名字叫小白,今年3岁,白色。 
+		还有一只叫小花,今年100岁,花色。请编写一个程序，当用户输入小猫的名字时，
+		就显示该猫的名字，年龄，颜色。如果用户输入的小猫名错误，
+		则显示 张老太没有这只猫猫。
+		 */</span>
+		<span class="token comment">//单独变量来解决 =&gt; 不利于数据的管理(你把一只猫的信息拆解)</span>
+		<span class="token comment">//第1只猫信息</span>
+		
+		<span class="token comment">// String cat1Name = "小白";</span>
+		<span class="token comment">// int cat1Age = 3;</span>
+		<span class="token comment">// String cat1Color = "白色";</span>
 
-<p>这一步报错代码在计算loss，有效解决方法是降低numpy的版本，原始版本1.21.4 降至 1.18.0</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43904899/article/details/121749291">链接</a></p>
-<h2 id="训练模型时爆显存"><a href="#训练模型时爆显存" class="headerlink" title="训练模型时爆显存"></a>训练模型时爆显存</h2><p>引发pytorch：CUDA out of memory错误的原因有两个：</p>
-<p>​	<strong>1.当前要使用的GPU正在被占用，导致显存不足以运行你要运行的模型训练命令不能正常运行</strong></p>
-<p>解决方法：</p>
+		<span class="token comment">// //第2只猫信息</span>
+		<span class="token comment">// String cat2Name = "小花";</span>
+		<span class="token comment">// int cat2Age = 100;</span>
+		<span class="token comment">// String cat2Color = "花色";</span>
+
+		<span class="token comment">//数组 ===&gt;(1)数据类型体现不出来(2) 只能通过[下标]获取信息，造成变量名字和内容</span>
+		<span class="token comment">//         的对应关系不明确(3) 不能体现猫的行为</span>
+		<span class="token comment">//第1只猫信息</span>
+		
+		<span class="token comment">// String[] cat1 = {"小白", "3", "白色"}; </span>
+		<span class="token comment">// String[] cat2 = {"小花", "100", "花色"};</span>
+
+
+		<span class="token comment">//使用OOP面向对象解决</span>
+		<span class="token comment">//实例化一只猫[创建一只猫对象]</span>
+		<span class="token comment">//老韩解读</span>
+		<span class="token comment">//1. new Cat() 创建一只猫(猫对象)</span>
+		<span class="token comment">//2. Cat cat1 = new Cat(); 把创建的猫赋给 cat1 </span>
+		<span class="token comment">//3. cat1 就是一个对象</span>
+		<span class="token class-name">Cat</span> cat1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		cat1<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"小白"</span><span class="token punctuation">;</span>
+		cat1<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+		cat1<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">"白色"</span><span class="token punctuation">;</span>
+		cat1<span class="token punctuation">.</span>weight <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+		<span class="token comment">//创建了第二只猫，并赋给 cat2</span>
+		<span class="token comment">//cat2 也是一个对象(猫对象)</span>
+		<span class="token class-name">Cat</span> cat2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		cat2<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"小花"</span><span class="token punctuation">;</span>
+		cat2<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+		cat2<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">"花色"</span><span class="token punctuation">;</span>
+		cat2<span class="token punctuation">.</span>weight <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+
+		<span class="token comment">//怎么访问对象的属性呢</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"第1只猫信息"</span> <span class="token operator">+</span> cat1<span class="token punctuation">.</span>name 
+			<span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> cat1<span class="token punctuation">.</span>age <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> cat1<span class="token punctuation">.</span>color <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> cat1<span class="token punctuation">.</span>weight<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"第2只猫信息"</span> <span class="token operator">+</span> cat2<span class="token punctuation">.</span>name 
+			<span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> cat2<span class="token punctuation">.</span>age <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> cat2<span class="token punctuation">.</span>color <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> cat2<span class="token punctuation">.</span>weight<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token comment">//使用面向对象的方式来解决养猫问题</span>
+<span class="token comment">//</span>
+<span class="token comment">//定义一个猫类 Cat -&gt; 自定义的数据类型</span>
+<span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token punctuation">{</span>
+	<span class="token comment">//属性/成员变量</span>
+	<span class="token class-name">String</span> name<span class="token punctuation">;</span> <span class="token comment">//名字</span>
+	<span class="token keyword">int</span> age<span class="token punctuation">;</span> <span class="token comment">//年龄</span>
+	<span class="token class-name">String</span> color<span class="token punctuation">;</span> <span class="token comment">//颜色</span>
+	<span class="token comment">//double weight; //体重</span>
+
+	<span class="token comment">//行为</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="对象在内存中的存在方式-重要"><a href="#对象在内存中的存在方式-重要" class="headerlink" title="对象在内存中的存在方式(重要)"></a><strong>对象在内存中的存在方式</strong>(重要)</h3><p><img src="/Users/wangrundong/Documents/GitHub/Java_study_blog/note/pic/image-20220801183107838.png" alt="image-20220801183107838"></p>
+<h3 id="属性的注意事项和细节说明"><a href="#属性的注意事项和细节说明" class="headerlink" title="属性的注意事项和细节说明"></a>属性的注意事项和细节说明</h3><ol>
+<li>属性大的定义语法同变量: <code>访问修饰符 属性类型 属性名</code></li>
+</ol>
+<p>​	public protected 默认 private</p>
+<ol start="2">
+<li>属性的定义类型可以为任意类型, 包含基本类型或引用类型</li>
+<li>属性如果不赋值, 有默认值, 规则和数组是一样的; (int,short,byte,long,都是0;  float,double都是0.0; char \u0000, boolean false, String null)</li>
+</ol>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PropertiesDetail</span> <span class="token punctuation">{</span> 
+
+	<span class="token comment">//编写一个main方法</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token comment">//创建Person对象</span>
+		<span class="token comment">//p1 是对象名(对象引用)</span>
+		<span class="token comment">//new Person() 创建的对象空间(数据) 才是真正的对象</span>
+		<span class="token class-name">Person</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"\n当前这个人的信息"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"age="</span> <span class="token operator">+</span> p1<span class="token punctuation">.</span>age <span class="token operator">+</span> <span class="token string">" name="</span> 
+				<span class="token operator">+</span> p1<span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">" sal="</span> <span class="token operator">+</span> p1<span class="token punctuation">.</span>sal <span class="token operator">+</span> <span class="token string">" isPass="</span> <span class="token operator">+</span> p1<span class="token punctuation">.</span>isPass<span class="token punctuation">)</span> <span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+	<span class="token comment">//四个属性</span>
+	<span class="token keyword">int</span> age<span class="token punctuation">;</span>
+	<span class="token class-name">String</span> name<span class="token punctuation">;</span>
+	<span class="token keyword">double</span> sal<span class="token punctuation">;</span>
+	<span class="token keyword">boolean</span> isPass<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="如何创建对象"><a href="#如何创建对象" class="headerlink" title="如何创建对象"></a>如何创建对象</h3><ol>
+<li>先声明再创建:</li>
+</ol>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Cat</span> cat<span class="token punctuation">;</span>
+cat <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ol start="2">
+<li>直接创建</li>
+</ol>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Cat</span> cat <span class="token operator">=</span> <span class="token function">newCat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="如何访问属性"><a href="#如何访问属性" class="headerlink" title="如何访问属性"></a>如何访问属性</h3><ul>
+<li><p><strong>基本语法:</strong></p>
+<ul>
+<li>对象名, 属性名;</li>
+</ul>
+</li>
+<li><p><strong>类和对象的内存分配机制</strong></p>
+<ul>
+<li><p>思考:</p>
+</li>
+<li><p>```java<br>  Person p1 = new Person();<br>  p1.age = 10;<br>  p1.name = “Harry”;<br>  Person p2 = p1;<br>  System.out.print(p2.age)</p>
+  <pre class="line-numbers language-none"><code class="language-none">
+    - 在这种情况下的p2.age应该是多少?
+
+
+&gt; **个人思考:**
+&gt;
+&gt; 这个本质上来讲和数组是一样的, 理论上都是把一个东西point toward to another thing, 那么`p2.age` will have no doubt same to p1.age
+
+![image-20220802102807228](/Users/wangrundong/Documents/GitHub/Java_study_blog/note/pic/image-20220802102807228.png)
+
+### 类和对象的内存分配机制
+
+***
+
+#### Java内存的结构分析
+
+- Stack - 栈: 一般存放基本数据类型(局部变量)
+- Heap - 堆: 存放对象(Cat cat, 数组等)
+- Method Area - 方法区: 常量池(常量, 比如字符串), 类加载信息
+- Map - 示意图: [Cat(name,age,price)]
+
+#### Java创建对象的流程分析
+
+```java
+Person p = new Person;
+p.name = "Harry";
+p.age = 18;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+</ul>
 <ol>
-<li>换另外的GPU</li>
-<li>kill 掉占用GPU的另外的程序（慎用！因为另外正在占用GPU的程序可能是别人在运行的程序，如果是自己的不重要的程序则可以kill）命令行中输入以下命令，可以查看当前正在GPU运行的程序：</li>
+<li>先价值Person类的信息(属性和方法信息) - 只加载一次</li>
+<li>在heap中分配空间, 进行默认初始化</li>
+<li>把地址赋给<code>p</code>, <code>p</code>就指向对象</li>
+<li>进行指定初始化, 比如<code>p.name - jack;</code></li>
 </ol>
-<pre class="line-numbers language-none"><code class="language-none">nvidia-smi
-ps -f -p 12345 //你自己的要查询的pid
-ps -f -p 进程号 
-# ps -f -p 5014
-UID        PID  PPID  C STIME TTY          TIME CMD
-root      5014     1  0 17:26 ?        00:00:00 /usr/local/apache/bin/httpd -k 
-kill 12345
-
-强制杀死进程
-kill -KILL 123456<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>​	<strong>2.可能是你要训练的模型所设置的batch-size太大了，GPU的显存满足不了</strong></p>
-<p>解决方法：</p>
-<ul>
-<li>把batch-size调小一些，如设置常用的256 128 64 32 16等</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/universe_R/article/details/124551674">链接</a></p>
-<h2 id="docker重启参数–restart-x3D-always的作用"><a href="#docker重启参数–restart-x3D-always的作用" class="headerlink" title="docker重启参数–restart=always的作用"></a>docker重启参数–restart=always的作用</h2><h3 id="一、启动时候添加参数"><a href="#一、启动时候添加参数" class="headerlink" title="一、启动时候添加参数"></a>一、启动时候添加参数</h3><p>   –restart=always参数能够使我们在重启docker时，自动启动相关容器。<br>Docker容器的重启策略如下：</p>
-<ul>
-<li>no，默认策略，在容器退出时不重启容器</li>
-<li>on-failure，在容器非正常退出时（退出状态非0），才会重启容器</li>
-<li>on-failure:3，在容器非正常退出时重启容器，最多重启3次</li>
-<li>always，在容器退出时总是重启容器</li>
-<li>unless-stopped，在容器退出时总是重启容器，但是不考虑在Docker守护进程启动时就已经停止了的容器</li>
-</ul>
-<h3 id="二、命令修改"><a href="#二、命令修改" class="headerlink" title="二、命令修改"></a>二、命令修改</h3><p>在启动时如果没有添加这个参数怎么办呢，比如1a7a3b5112fd这个容器在启动的时候是没有添加–restart=always参数的，针对这种情况我们可以使用命令进行修改。<code>docker container update --restart=always 容器名字</code></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bjywxc/article/details/103530262">链接</a></p>
-<h2 id="docker容器中分布式训练报错，显存不足"><a href="#docker容器中分布式训练报错，显存不足" class="headerlink" title="docker容器中分布式训练报错，显存不足"></a>docker容器中分布式训练报错，显存不足</h2><ol>
-<li><p>在容器中查看共享内存大小</p>
-<pre class="line-numbers language-scripts" data-language="scripts"><code class="language-scripts">df -h | grep shm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>一般原始大小为64M，这是远远不够的</p>
-</li>
-<li><p>关闭docker</p>
-<pre class="line-numbers language-scripts" data-language="scripts"><code class="language-scripts">service docker stop<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>进入宿主机中修改hostconfig.json</p>
-<pre class="line-numbers language-none"><code class="language-none">具体修改步骤如下
-
-1、使用 docker ps -a 命令找到要修改容器的 CONTAINER ID
-
-2、运行 docker inspect 【CONTAINER ID】 | grep Id 命令  //我这里没有显示到需要的目录id
-
-3、执行 cd /var/lib/docker/containers 命令进入找到与 Id 相同的目录<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>将ShmSize后面加个“22”大概扩大了100倍</p>
-</li>
-<li><p>重启docker</p>
-<pre class="line-numbers language-none"><code class="language-none">service docker stop<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/shmily_lsl/article/details/81166951">链接</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3ba9a016dc82">链接</a></p>
-</li>
-</ol>
-<h2 id="numpy去除元素全为零的行或列"><a href="#numpy去除元素全为零的行或列" class="headerlink" title="numpy去除元素全为零的行或列"></a>numpy去除元素全为零的行或列</h2><ul>
-<li><p>np.all() 所有元素不为零或空或False，返回True</p>
-<pre class="line-numbers language-none"><code class="language-none">import numpy as np
-a=np.array([0,1,2,0,3,4,0,5,6,0,0,0,0,0,0]).reshape(5,3)
-#去除全零行
-print(a[[not np.all(a[i] == 0) for i in range(a.shape[0])], :])
-[[0 1 2]
- [0 3 4]
- [0 5 6]]
-#去除全零列
-print(a[:, [not np.all(a[:, i] == 0) for i in range(a.shape[1])]])
-[[1 2]
- [3 4]
- [5 6]
- [0 0]
- [0 0]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>请注意某行或列元素是否存在和为零的情况</p>
-<pre class="line-numbers language-none"><code class="language-none">import numpy as np
-a=np.array([0,1,2,0,3,4,0,5,6,0,0,0,0,0,0]).reshape(5,3)
-
-a
-array([[0, 1, 2],
-       [0, 3, 4],
-       [0, 5, 6],
-       [0, 0, 0],
-       [0, 0, 0]])
-
-#去除全零行
-a[a.sum(axis=1)!=0,:]
-array([[0, 1, 2],
-       [0, 3, 4],
-       [0, 5, 6]])
-
-#去除全零列
-
-a[:,a.sum(axis=0)!=0]
-array([[1, 2],
-       [3, 4],
-       [5, 6],
-       [0, 0],
-       [0, 0]])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/7f9fd17c8662">链接</a></p>
-</li>
-</ul>
-<h2 id="python读取文件名及后缀"><a href="#python读取文件名及后缀" class="headerlink" title="python读取文件名及后缀"></a>python读取文件名及后缀</h2><ul>
-<li><p><strong>os.listdir</strong>()</p>
-<p>语法：<code>os.listdir(path)</code></p>
-<p>函数用途：输出路径下所有文件的文件名</p>
-<p><strong>结果分析</strong>：</p>
-<p><code>os.listdir</code> 以列表的形式返回指定文件夹的下所有内容，不管是文件还是文件夹</p>
-</li>
-<li><p><strong>os.path.splitext</strong>()</p>
-<p>语法：<code>os.path.splitext(文件名)</code></p>
-<p>函数用途：将文件名和扩展名分开。</p>
-<p><strong>结果分析</strong>：</p>
-<p>就是以文件名中的’.’作为分隔符，分隔文件名称与文件后缀，以元组的形式返回文件名与后缀。</p>
-</li>
-<li><p><strong>os.path.split()</strong></p>
-<p>语法：<code>os.path.split(path)</code></p>
-<p>函数用途：返回文件的路径和文件名。</p>
-<p><strong>结果分析</strong>：</p>
-<p>就是以路径最后一个’/‘或者’\‘为分隔，以元祖的形式返回路径与文件名，若只有文件名，则输出文件名与空。</p>
-<h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><p>通过listdir()获得该文件夹下所有文件名，使用splitext()分离文件名和后缀，判断文件名最后一个是否为d,后缀是否为lib</p>
-<pre class="line-numbers language-none"><code class="language-none">import os
-path = "E:/vs_code/qtVideo/lib"
-datanames = os.listdir(path)
-for i in datanames:
-    if os.path.splitext(i)[1]=='.lib' and  os.path.splitext(i)[0][-1]=='d':
-        print(i)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>可以看到我们把文件中的d.lib的文件都已经筛选出来了</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/nienelong3319/article/details/107048970">链接</a></p>
-</li>
-</ul>
+<p><img src="/Users/wangrundong/Documents/GitHub/Java_study_blog/note/pic/image-20220802103615082.png" alt="image-20220802103615082"></p>
+<p><img src="/./note/image-20220802103639977.png" alt="image-20220802103639977"></p>
 
                 
             </div>
@@ -573,7 +609,7 @@ for i in datanames:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://kdxy2233.github.io/2022/06/30/2022-6-30/">https://kdxy2233.github.io/2022/06/30/2022-6-30/</a>
+                    <a href="https://kdxy2233.github.io/2022/08/01/lei-yu-dui-xiang-oop/">https://kdxy2233.github.io/2022/08/01/lei-yu-dui-xiang-oop/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -611,8 +647,8 @@ for i in datanames:
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%97%A5%E5%BF%97/">
-                                    <span class="chip bg-color">日志</span>
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">java</span>
                                 </a>
                             
                         </div>
@@ -695,13 +731,13 @@ for i in datanames:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/07/04/2022-7-4/">
+                <a href="/2022/08/02/liu-cheng-kong-zhi-jie-shao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="2022-07-04 日志">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="2022-08-02 日志">
                         
-                        <span class="card-title">2022-07-04 日志</span>
+                        <span class="card-title">2022-08-02 日志</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -712,7 +748,7 @@ for i in datanames:
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-04
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-02
                         </span>
                         <span class="publish-author">
                             
@@ -725,8 +761,8 @@ for i in datanames:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%97%A5%E5%BF%97/">
-                        <span class="chip bg-color">日志</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
@@ -740,13 +776,13 @@ for i in datanames:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/06/30/lun-wen-bi-ji-mo-ban/">
+                <a href="/2022/07/30/jin-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="论文笔记模板">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="2022-07-30 日志">
                         
-                        <span class="card-title">论文笔记模板</span>
+                        <span class="card-title">2022-07-30 日志</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -757,7 +793,7 @@ for i in datanames:
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-30
                             </span>
                         <span class="publish-author">
                             
@@ -770,8 +806,8 @@ for i in datanames:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%BA%E6%96%87/">
-                        <span class="chip bg-color">论文</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>

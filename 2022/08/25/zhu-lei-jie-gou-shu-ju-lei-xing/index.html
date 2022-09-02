@@ -4,9 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="2022-06-30 日志, Hexo">
-    <meta name="description" content="读取数据集时，训练数据和标签数据读入顺序不匹配inp_files = sorted(os.listdir(os.path.join(rgb_dir, &#39;input&#39;)),key=lambda x: int(x[7:-6]))
-tar_fil">
+    <meta name="keywords" content="2022-08-25 日志, Hexo">
+    <meta name="description" content="主类结构public class hello {
+    public static void main(String[] args) {
+        String s1 = &#34;hello&#34;; //定义变量字符值
+        Str">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +20,7 @@ tar_fil">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>2022-06-30 日志 | Hexo</title>
+    <title>2022-08-25 日志 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -315,12 +317,12 @@ tar_fil">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">2022-06-30 日志</h1>
+                    <h1 class="description center-align post-title">2022-08-25 日志</h1>
                 </div>
             </div>
         </div>
@@ -344,8 +346,8 @@ tar_fil">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%97%A5%E5%BF%97/">
-                                <span class="chip bg-color">日志</span>
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">java</span>
                             </a>
                         
                     </div>
@@ -360,7 +362,7 @@ tar_fil">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-06-30
+                    2022-08-25
                 </div>
                 
 
@@ -369,14 +371,14 @@ tar_fil">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    527
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    2 分
                 </div>
                 
 
@@ -399,154 +401,151 @@ tar_fil">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="读取数据集时，训练数据和标签数据读入顺序不匹配"><a href="#读取数据集时，训练数据和标签数据读入顺序不匹配" class="headerlink" title="读取数据集时，训练数据和标签数据读入顺序不匹配"></a>读取数据集时，训练数据和标签数据读入顺序不匹配</h2><pre class="line-numbers language-none"><code class="language-none">inp_files = sorted(os.listdir(os.path.join(rgb_dir, 'input')),key=lambda x: int(x[7:-6]))
-tar_files = sorted(os.listdir(os.path.join(rgb_dir, 'target')),key=lambda x: int(x[7:-4]))
+                <h1 id="主类结构"><a href="#主类结构" class="headerlink" title="主类结构"></a>主类结构</h1><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> hello <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">String</span> s1 <span class="token operator">=</span> <span class="token string">"hello"</span><span class="token punctuation">;</span> <span class="token comment">//定义变量字符值</span>
+        <span class="token class-name">String</span> s2 <span class="token operator">=</span> <span class="token string">"Java"</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> s3 <span class="token operator">=</span> <span class="token string">"is sooooooo hard"</span><span class="token punctuation">;</span>
 
-self.inp_filenames = [os.path.join(rgb_dir, 'input', x)  for x in inp_files if is_image_file(x)]
-self.tar_filenames = [os.path.join(rgb_dir, 'target', x) for x in tar_files if is_image_file(x)]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46109590/article/details/114235237">链接</a></p>
-<h2 id="loss函数报错"><a href="#loss函数报错" class="headerlink" title="loss函数报错"></a>loss函数报错</h2><pre class="line-numbers language-none"><code class="language-none">RuntimeError: Cant call numpy() on Variable that requires grad. Use var.detach().numpy() instead.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>这一步报错代码在计算loss，有效解决方法是降低numpy的版本，原始版本1.21.4 降至 1.18.0</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43904899/article/details/121749291">链接</a></p>
-<h2 id="训练模型时爆显存"><a href="#训练模型时爆显存" class="headerlink" title="训练模型时爆显存"></a>训练模型时爆显存</h2><p>引发pytorch：CUDA out of memory错误的原因有两个：</p>
-<p>​	<strong>1.当前要使用的GPU正在被占用，导致显存不足以运行你要运行的模型训练命令不能正常运行</strong></p>
-<p>解决方法：</p>
-<ol>
-<li>换另外的GPU</li>
-<li>kill 掉占用GPU的另外的程序（慎用！因为另外正在占用GPU的程序可能是别人在运行的程序，如果是自己的不重要的程序则可以kill）命令行中输入以下命令，可以查看当前正在GPU运行的程序：</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">nvidia-smi
-ps -f -p 12345 //你自己的要查询的pid
-ps -f -p 进程号 
-# ps -f -p 5014
-UID        PID  PPID  C STIME TTY          TIME CMD
-root      5014     1  0 17:26 ?        00:00:00 /usr/local/apache/bin/httpd -k 
-kill 12345
-
-强制杀死进程
-kill -KILL 123456<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>​	<strong>2.可能是你要训练的模型所设置的batch-size太大了，GPU的显存满足不了</strong></p>
-<p>解决方法：</p>
 <ul>
-<li>把batch-size调小一些，如设置常用的256 128 64 32 16等</li>
+<li>开始需定义public 类(class)</li>
 </ul>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/universe_R/article/details/124551674">链接</a></p>
-<h2 id="docker重启参数–restart-x3D-always的作用"><a href="#docker重启参数–restart-x3D-always的作用" class="headerlink" title="docker重启参数–restart=always的作用"></a>docker重启参数–restart=always的作用</h2><h3 id="一、启动时候添加参数"><a href="#一、启动时候添加参数" class="headerlink" title="一、启动时候添加参数"></a>一、启动时候添加参数</h3><p>   –restart=always参数能够使我们在重启docker时，自动启动相关容器。<br>Docker容器的重启策略如下：</p>
+<p>[!Note]class 不等同于Class (严格区分大小写)</p>
 <ul>
-<li>no，默认策略，在容器退出时不重启容器</li>
-<li>on-failure，在容器非正常退出时（退出状态非0），才会重启容器</li>
-<li>on-failure:3，在容器非正常退出时重启容器，最多重启3次</li>
-<li>always，在容器退出时总是重启容器</li>
-<li>unless-stopped，在容器退出时总是重启容器，但是不考虑在Docker守护进程启动时就已经停止了的容器</li>
+<li>public class 定义初始类, 继续class可继续定义新类</li>
 </ul>
-<h3 id="二、命令修改"><a href="#二、命令修改" class="headerlink" title="二、命令修改"></a>二、命令修改</h3><p>在启动时如果没有添加这个参数怎么办呢，比如1a7a3b5112fd这个容器在启动的时候是没有添加–restart=always参数的，针对这种情况我们可以使用命令进行修改。<code>docker container update --restart=always 容器名字</code></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bjywxc/article/details/103530262">链接</a></p>
-<h2 id="docker容器中分布式训练报错，显存不足"><a href="#docker容器中分布式训练报错，显存不足" class="headerlink" title="docker容器中分布式训练报错，显存不足"></a>docker容器中分布式训练报错，显存不足</h2><ol>
-<li><p>在容器中查看共享内存大小</p>
-<pre class="line-numbers language-scripts" data-language="scripts"><code class="language-scripts">df -h | grep shm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> main <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>一般原始大小为64M，这是远远不够的</p>
-</li>
-<li><p>关闭docker</p>
-<pre class="line-numbers language-scripts" data-language="scripts"><code class="language-scripts">service docker stop<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>进入宿主机中修改hostconfig.json</p>
-<pre class="line-numbers language-none"><code class="language-none">具体修改步骤如下
+<ul>
+<li>定义类: main </li>
+<li>括号后面的内容进行内容定义(args)</li>
+<li>double(用处不明)</li>
+<li>System.out.printIn()和print一样, system在terminal输出print字符串</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BMI</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">double</span> height <span class="token operator">=</span> <span class="token number">180</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> weight <span class="token operator">=</span> <span class="token number">65</span><span class="token punctuation">;</span>
+        <span class="token keyword">double</span> exponent <span class="token operator">=</span> weight<span class="token operator">/</span><span class="token punctuation">(</span>height<span class="token operator">*</span>height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>
+                <span class="token string">"您的身高是: "</span> <span class="token operator">+</span> height
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>
+                <span class="token string">"您的体重是: "</span> <span class="token operator">+</span> weight
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"您的BMI指数为"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>exponent <span class="token operator">&lt;</span> <span class="token number">18.5</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"您体重太轻了"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>exponent <span class="token operator">&gt;=</span> <span class="token number">18.5</span> <span class="token operator">&amp;&amp;</span> exponent <span class="token operator">&lt;</span><span class="token number">29.9</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"体重过重"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>exponent <span class="token operator">&gt;=</span> <span class="token number">29.9</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"肥胖"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-1、使用 docker ps -a 命令找到要修改容器的 CONTAINER ID
 
-2、运行 docker inspect 【CONTAINER ID】 | grep Id 命令  //我这里没有显示到需要的目录id
 
-3、执行 cd /var/lib/docker/containers 命令进入找到与 Id 相同的目录<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h1><h4 id="整数数据类型"><a href="#整数数据类型" class="headerlink" title="整数数据类型:"></a>整数数据类型:</h4><p>int	64位 (<em><strong>默认类型</strong></em>)</p>
+<p>声明: </p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">15</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> c <span class="token operator">=</span> a<span class="token operator">-</span>b<span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printIn</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>将ShmSize后面加个“22”大概扩大了100倍</p>
-</li>
-<li><p>重启docker</p>
-<pre class="line-numbers language-none"><code class="language-none">service docker stop<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>byte	8位</li>
+<li>声明: 和int一样</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">byte</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/shmily_lsl/article/details/81166951">链接</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3ba9a016dc82">链接</a></p>
-</li>
-</ol>
-<h2 id="numpy去除元素全为零的行或列"><a href="#numpy去除元素全为零的行或列" class="headerlink" title="numpy去除元素全为零的行或列"></a>numpy去除元素全为零的行或列</h2><ul>
-<li><p>np.all() 所有元素不为零或空或False，返回True</p>
-<pre class="line-numbers language-none"><code class="language-none">import numpy as np
-a=np.array([0,1,2,0,3,4,0,5,6,0,0,0,0,0,0]).reshape(5,3)
-#去除全零行
-print(a[[not np.all(a[i] == 0) for i in range(a.shape[0])], :])
-[[0 1 2]
- [0 3 4]
- [0 5 6]]
-#去除全零列
-print(a[:, [not np.all(a[:, i] == 0) for i in range(a.shape[1])]])
-[[1 2]
- [3 4]
- [5 6]
- [0 0]
- [0 0]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>请注意某行或列元素是否存在和为零的情况</p>
-<pre class="line-numbers language-none"><code class="language-none">import numpy as np
-a=np.array([0,1,2,0,3,4,0,5,6,0,0,0,0,0,0]).reshape(5,3)
-
-a
-array([[0, 1, 2],
-       [0, 3, 4],
-       [0, 5, 6],
-       [0, 0, 0],
-       [0, 0, 0]])
-
-#去除全零行
-a[a.sum(axis=1)!=0,:]
-array([[0, 1, 2],
-       [0, 3, 4],
-       [0, 5, 6]])
-
-#去除全零列
-
-a[:,a.sum(axis=0)!=0]
-array([[1, 2],
-       [3, 4],
-       [5, 6],
-       [0, 0],
-       [0, 0]])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/7f9fd17c8662">链接</a></p>
+<ul>
+<li>short	16位<ul>
+<li>声明: 和int相同</li>
+</ul>
 </li>
 </ul>
-<h2 id="python读取文件名及后缀"><a href="#python读取文件名及后缀" class="headerlink" title="python读取文件名及后缀"></a>python读取文件名及后缀</h2><ul>
-<li><p><strong>os.listdir</strong>()</p>
-<p>语法：<code>os.listdir(path)</code></p>
-<p>函数用途：输出路径下所有文件的文件名</p>
-<p><strong>结果分析</strong>：</p>
-<p><code>os.listdir</code> 以列表的形式返回指定文件夹的下所有内容，不管是文件还是文件夹</p>
-</li>
-<li><p><strong>os.path.splitext</strong>()</p>
-<p>语法：<code>os.path.splitext(文件名)</code></p>
-<p>函数用途：将文件名和扩展名分开。</p>
-<p><strong>结果分析</strong>：</p>
-<p>就是以文件名中的’.’作为分隔符，分隔文件名称与文件后缀，以元组的形式返回文件名与后缀。</p>
-</li>
-<li><p><strong>os.path.split()</strong></p>
-<p>语法：<code>os.path.split(path)</code></p>
-<p>函数用途：返回文件的路径和文件名。</p>
-<p><strong>结果分析</strong>：</p>
-<p>就是以路径最后一个’/‘或者’\‘为分隔，以元祖的形式返回路径与文件名，若只有文件名，则输出文件名与空。</p>
-<h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><p>通过listdir()获得该文件夹下所有文件名，使用splitext()分离文件名和后缀，判断文件名最后一个是否为d,后缀是否为lib</p>
-<pre class="line-numbers language-none"><code class="language-none">import os
-path = "E:/vs_code/qtVideo/lib"
-datanames = os.listdir(path)
-for i in datanames:
-    if os.path.splitext(i)[1]=='.lib' and  os.path.splitext(i)[0][-1]=='d':
-        print(i)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">short</span> a <span class="token operator">=</span> <span class="token number">90</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>可以看到我们把文件中的d.lib的文件都已经筛选出来了</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/nienelong3319/article/details/107048970">链接</a></p>
+<ul>
+<li>long	32位<ul>
+<li>声明:  结尾加L 或者l 其他和int一样</li>
+</ul>
 </li>
 </ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">long</span> number<span class="token punctuation">;</span>
+<span class="token keyword">long</span> number <span class="token operator">=</span> <span class="token number">30L</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ul>
+<li>float 单精度浮点类型<ul>
+<li>声明: 小数后面+ F or f</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">float</span> f1 <span class="token operator">=</span> <span class="token number">2.2132132f</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>Double  双精度浮点类型:<ul>
+<li>声明: 默认都是double数据类型, 小数后面+ D 或者d.</li>
+<li>但是没有特定要求</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">double</span> f2 <span class="token operator">=</span> <span class="token number">2.2323423</span><span class="token punctuation">;</span>
+<span class="token keyword">double</span> f3 <span class="token operator">=</span> <span class="token number">2.3242234d</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型:"></a>字符类型:</h4><ul>
+<li>char 型:<ul>
+<li>用于储存单个字符, 占用16位内存空间.</li>
+<li>用单引号表示, ‘s’</li>
+</ul>
+</li>
+</ul>
+<p><em><strong>注意! 双引号就是字符串了</strong></em></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">char</span> a <span class="token operator">=</span> <span class="token char">'b'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>可以用unicode 来表示, 所以上面的也可以用</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">char</span> a <span class="token operator">=</span> <span class="token number">98</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符:"></a>转义字符:</h4><ul>
+<li><p>\123 八进制</p>
+</li>
+<li><p>\u0052 四位16进制</p>
+</li>
+<li><p>\‘ 单引号</p>
+</li>
+<li><p>\\ 反斜杠</p>
+</li>
+<li><p>\t 垂直制表符</p>
+</li>
+<li><p>\r 回车</p>
+</li>
+<li><p>\n 换行</p>
+</li>
+<li><p>\b back space</p>
+</li>
+<li><p>\f 换页</p>
+</li>
+</ul>
+<h4 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型:"></a>布尔类型:</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">boolean</span> b<span class="token punctuation">;</span>
+<span class="token keyword">boolean</span> b1<span class="token punctuation">,</span> b2<span class="token punctuation">;</span>
+<span class="token keyword">boolean</span> b <span class="token class-name">True</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>逻辑类型, 简称布尔型.<ul>
+<li>Boolean只有 True 或者是 False, 且不可以和整数类型转换.</li>
+</ul>
+</li>
+</ul>
+<p><em><strong>一般是在流程判断中做为条件变量以及条件判断 来定义布尔类型.</strong></em></p>
 
                 
             </div>
@@ -573,7 +572,7 @@ for i in datanames:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://kdxy2233.github.io/2022/06/30/2022-6-30/">https://kdxy2233.github.io/2022/06/30/2022-6-30/</a>
+                    <a href="https://kdxy2233.github.io/2022/08/25/zhu-lei-jie-gou-shu-ju-lei-xing/">https://kdxy2233.github.io/2022/08/25/zhu-lei-jie-gou-shu-ju-lei-xing/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -611,8 +610,8 @@ for i in datanames:
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%97%A5%E5%BF%97/">
-                                    <span class="chip bg-color">日志</span>
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">java</span>
                                 </a>
                             
                         </div>
@@ -695,13 +694,13 @@ for i in datanames:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/07/04/2022-7-4/">
+                <a href="/2022/08/25/post-title-with-whitespace/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="2022-07-04 日志">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="post title with whitespace">
                         
-                        <span class="card-title">2022-07-04 日志</span>
+                        <span class="card-title">post title with whitespace</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -712,7 +711,7 @@ for i in datanames:
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-04
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-25
                         </span>
                         <span class="publish-author">
                             
@@ -725,8 +724,8 @@ for i in datanames:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%97%A5%E5%BF%97/">
-                        <span class="chip bg-color">日志</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -740,13 +739,13 @@ for i in datanames:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/06/30/lun-wen-bi-ji-mo-ban/">
+                <a href="/2022/08/25/hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="论文笔记模板">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">论文笔记模板</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -757,7 +756,7 @@ for i in datanames:
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-25
                             </span>
                         <span class="publish-author">
                             
@@ -766,14 +765,6 @@ for i in datanames:
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%AE%BA%E6%96%87/">
-                        <span class="chip bg-color">论文</span>
-                    </a>
-                    
                 </div>
                 
             </div>
