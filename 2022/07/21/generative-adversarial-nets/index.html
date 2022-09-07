@@ -4,11 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="2022-07-06 日志, Hexo">
-    <meta name="description" content="2022-7-6docker部署aliyundrive-webdav实现阿里云盘WebDAV服务创建 aliyundrive-webdav 容器:
-docker run -d \
---name=aliyundrive-webdav \
---">
+    <meta name="keywords" content="Generative Adversarial Nets, Hexo">
+    <meta name="description" content="前言生成对抗网络 (Generative Adversarial Network, GAN) 是一类神经网络，通过轮流训练判别器 (Discriminator) 和生成器 (Generator)，令其相互对抗，来从复杂概率分布中采样，例如生">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +17,7 @@ docker run -d \
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>2022-07-06 日志 | Hexo</title>
+    <title>Generative Adversarial Nets | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -317,12 +314,12 @@ docker run -d \
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">2022-07-06 日志</h1>
+                    <h1 class="description center-align post-title">Generative Adversarial Nets</h1>
                 </div>
             </div>
         </div>
@@ -346,8 +343,8 @@ docker run -d \
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%97%A5%E5%BF%97/">
-                                <span class="chip bg-color">日志</span>
+                            <a href="/tags/%E8%AE%BA%E6%96%87/">
+                                <span class="chip bg-color">论文</span>
                             </a>
                         
                     </div>
@@ -362,7 +359,7 @@ docker run -d \
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-07-06
+                    2022-07-21
                 </div>
                 
 
@@ -371,14 +368,14 @@ docker run -d \
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    245
+                    3.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    13 分
                 </div>
                 
 
@@ -401,37 +398,62 @@ docker run -d \
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="2022-7-6"><a href="#2022-7-6" class="headerlink" title="2022-7-6"></a>2022-7-6</h1><h2 id="docker部署aliyundrive-webdav实现阿里云盘WebDAV服务"><a href="#docker部署aliyundrive-webdav实现阿里云盘WebDAV服务" class="headerlink" title="docker部署aliyundrive-webdav实现阿里云盘WebDAV服务"></a>docker部署aliyundrive-webdav实现阿里云盘WebDAV服务</h2><p><strong>创建 aliyundrive-webdav 容器:</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">docker run -d \
---name=aliyundrive-webdav \
---restart=always \
--p 8080:8080 \
--v $PWD/docker/aliyundrive-webdav/:/etc/aliyundrive-webdav/ \
- -e REFRESH_TOKEN='your refreshToken' \
- -e WEBDAV_AUTH_USER=admin \
- -e WEBDAV_AUTH_PASSWORD=admin \
- messense/aliyundrive-webdav<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>解释：</strong></p>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>生成对抗网络 (Generative Adversarial Network, GAN) 是一类神经网络，通过轮流训练判别器 (Discriminator) 和生成器 (Generator)，令其相互对抗，来从复杂概率分布中采样，例如生成图片、文字、语音等。GAN 最初由 Ian Goodfellow 提出，原论文见</p>
+<p>[<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1406.2661]">https://arxiv.org/abs/1406.2661]</a>: </p>
+<p>GAN的基本原理其实非常简单，这里以生成图片为例进行说明。假设我们有两个网络，G（Generator）和D（Discriminator）。正如它的名字所暗示的那样，它们的功能分别是：</p>
 <ul>
-<li><p>name=aliyundrive-webdav 设置容器的名字为：aliyundrive-webdav</p>
-</li>
-<li><p>–restart=always 设置容器为开机自启动</p>
-</li>
-<li><p>-p 8080:8080 设置端口映射，通过 8080 端口可以访问到WebDAV</p>
-</li>
-<li><p>-v $PWD/docker/aliyundrive-webdav/:/etc/aliyundrive-webdav/ 设置存储目录为：用户目录/docker/aliyundrive-webdav/</p>
-</li>
-<li><p>-e REFRESH_TOKEN=’your refreshToken’ 设置阿里云盘的 token 需要根据实际情况填写，如何获取 token 后面会介绍</p>
-</li>
-<li><p>-e WEBDAV_AUTH_USER=admin 设置登录用户名为 admin</p>
-</li>
-<li><p>-e WEBDAV_AUTH_PASSWORD=admin 设置登录密码为 admin</p>
-</li>
-<li><p>messense/aliyundrive-webdav 设置拉取的镜像名称，不设置版本的话默认是最新版本，指定版本，如：messense/aliyundrive-webdav:1.2.5</p>
-</li>
+<li>G是一个生成图片的网络，它接收一个随机的噪声z，通过这个噪声生成图片，记做G(z)。</li>
+<li>D是一个判别网络，判别一张图片是不是“真实的”。它的输入参数是x，x代表一张图片，输出D（x）代表x为真实图片的概率，如果为1，就代表100%是真实的图片，而输出为0，就代表不可能是真实的图片。</li>
 </ul>
-<p>执行成功后，通过 docker 所在服务器的IP + 端口号可访问阿里云盘WebDAV，如：192.168.10.129:8080</p>
+<p>在训练过程中，<strong>生成网络G的目标就是尽量生成真实的图片去欺骗判别网络D。而D的目标就是尽量把G生成的图片和真实的图片分别开来。</strong>这样，G和D构成了一个动态的“博弈过程”。</p>
+<p>最后博弈的结果是什么？<strong>在最理想的状态下，</strong>G可以生成足以“以假乱真”的图片G(z)。对于D来说，它难以判定G生成的图片究竟是不是真实的，因此D(G(z)) = 0.5。[<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/92935321#ref_1">1]</a></p>
+<p><strong>通俗讲解GAN的文章：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/33752313">陈诚：通俗理解生成对抗网络GAN2893 赞同 · 72 评论文章<img src="https://pic4.zhimg.com/v2-5ca6a701d92341b8357830cc176fb8a3_180x120.jpg" alt="img"></a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24767059">何之源：GAN学习指南：从原理入门到制作生成Demo3722 赞同 · 401 评论文章<img src="https://pic2.zhimg.com/v2-bf41b301f3b7899e89c483bdf3789445_180x120.jpg" alt="img"></a></p>
+<p>*<strong>下面我就原文的阅读笔记进行描述。*</strong></p>
+<h2 id="Generative-Adversarial-Nets"><a href="#Generative-Adversarial-Nets" class="headerlink" title="Generative Adversarial Nets"></a><strong>Generative Adversarial Nets</strong></h2><h3 id="0-Abstract"><a href="#0-Abstract" class="headerlink" title="0. Abstract"></a><strong>0. Abstract</strong></h3><p>我们提出了一个新的框架，通过一个对抗的过程来估计生成模型，在此过程中我们同时训练两个模型:一个生成模型G捕获数据分布，和一种判别模型D，它估计样本来自训练数据而不是G的概率。G的训练程序是最大化D犯错的概率，这个框架对应于一个极小极大的双人游戏。在任意函数G和D的空间中，存在唯一解，G可以重现训练数据分布，D处处等于1/2。在G和D由多层感知器定义的情况下，整个系统可以通过反向传播进行训练。在训练或生成样本的过程中，不需要任何马尔科夫链或展开的近似推理网络。通过对生成的样本进行定性和定量评估，实验证明了该框架的潜力。</p>
+<h3 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a><strong>1. Introduction</strong></h3><p>深度学习的前景是发现丰富的分层模型，它代表人工智能应用中遇到的各种数据的概率分布，如自然图像、包含语音的音频波形和自然语言语料库中的符号。到目前为止，在深度学习中最显著的成功涉及到判别模型，通常是那些将高维、丰富的感官输入映射到类标签的模型。这些惊人的成功主要是基于反向传播和dropout算法，使用分段线性单元，具有特别良好的梯度。由于在极大似然估计和相关策略中出现的许多难以处理的概率计算的近似性，以及由于难以在生成环境中利用分段线性单元的优点，深度生成模型的影响较小。我们提出了一种新的生成模型估计方法来克服这些困难。</p>
+<p>在提出的对抗网框架中，生成模型与对手进行了比较:一个学习确定样本是来自模型分布还是来自数据分布的判别模型。生成模型可以被认为类似于一组伪造者，他们试图制造假币并在不被发现的情况下使用它，而判别模型则类似于警察，试图发现假币，这个游戏的竞争促使两队改进他们的方法，直到仿冒品无法从真品中辨别出来。</p>
+<p>该框架可以生成针对多种模型的特定训练算法和优化算法，在这篇文章中，我们探讨了生成模型通过一个多层感知器传递随机噪声来生成样本的特殊情况，而判别模型也是一个多层感知器，我们把这种特殊情况称为对抗网络。在这种情况下，我们可以只使用非常成功的反向传播和dropout算法来训练这两个模型，并且只使用正向传播来训练生成模型的样本，不需要近似推论或马尔科夫链。</p>
+<h3 id="2-Relatedwork"><a href="#2-Relatedwork" class="headerlink" title="2. Relatedwork"></a><strong>2. Relatedwork</strong></h3><p>有潜在变量的有向图形模型的另一种选择是有潜在变量的无向图形模型，如限制玻尔兹曼机(RBMs)，深玻尔兹曼机(DBMs)及其众多变体。这些模型中的相互作用被表示为未归一化势函数的乘积，由随机变量所有状态的全局求和/积分进行归一化。这个数量(配分函数)和它的梯度是棘手的，但最琐碎的情况下，虽然他们可以由马尔可夫链蒙特卡罗(MCMC)方法估计。对于依赖于MCMC的学习算法来说，混合是一个很重要的问题。</p>
+<p>深度置信网络(DBNs)[16]是包含一个无向层和多个有向层的混合模型。虽然存在一种快速的分层近似训练准则，但DBNs存在与无向和有向模型相关的计算困难。</p>
+<p>也有人提出了不近似或不限制对数似然的替代标准，如分数匹配和噪声对比估计(NCE)，这两种方法都要求所学习的概率密度被解析指定为一个归一化常数。请注意，在许多具有多层潜在变量(如DBNs和DBMs)的有趣生成模型中，甚至不可能导出可处理的非规范化概率密度，一些模型，如去噪自动编码器[30]和收缩自动编码器的学习规则非常类似于分数匹配应用于RBMs。在NCE中，与本文一样，使用了判别训练准则来拟合生成模型。然而，生成模型本身用于从固定噪声分布的样本中区分生成的数据，而不是拟合一个单独的判别模型。由于NCE使用一个固定的噪声分布，当模型学习到即使是在观察变量的一个小子集上的一个近似正确的分布之后，学习速度也会显著减慢。</p>
+<p>最后，一些技术不涉及明确定义概率分布，而是训练生成机器从期望的分布中抽取样本，这种方法的优点是可以通过反向传播来训练这些机器。近期主要的工作包括生成随机网络(GSN)框架：它扩展了广义去噪自动编码器：两者都可以看作是定义一个参数化的马尔科夫链，即一个人学习机器的参数，执行一个步骤的生成马尔科夫链。与GSNs相比，对抗网的采样不需要马尔科夫链，由于反求网络在生成过程中不需要反馈环，所以它们能够更好地利用分段线性单元，这提高了反向传播的性能，但在使用反馈环时存在无限制激活的问题。通过反向传播训练生成机器的最新例子包括自动编码变分贝叶斯和随机反向传播。</p>
+<h3 id="3-Adversarialnets"><a href="#3-Adversarialnets" class="headerlink" title="3. Adversarialnets"></a>3. Adversarialnets</h3><p>当模型都是多层感知器时，对抗性建模框架最容易应用。为了学习生成器在数据x上的分布pg,我们定义了一个输入噪声变量pz (z), <strong>G (z;θg)表示将噪声变量映射到数据空间, G是一个可微函数，表示为一个参数为θg的多层感知器。</strong>我们还定义一个多层感知器<strong>D (x;θd)输出一个标量，D(x)表示x来自数据集而不是pg的概率。</strong>我们训练D最大限度地将正确的标签分配给训练样本和来自G的样本的概率，我们同时训练G，使得 log(1 - D(G(z))) 最小化。</p>
+<p>换句话说，D和G玩了一个具有值函数V (G,D)的二人极大极小博弈:</p>
+<p><img src="https://pic1.zhimg.com/v2-2a130f3c4010c927121f479dfda72648_r.jpg" alt="img"></p>
+<p>在下一节中，我们将对对抗网进行理论分析，主要说明当G和D具有足够的容量时，训练准则允许恢复数据生成分布，例如在非参数极限下。请参见图1，其中对该方法进行了不太正式的、更具教育性的解释。在实践中，我们必须使用迭代的数值方法来实现游戏。优化完成内环的训练在计算上是禁止的，对于有限的数据集会导致过度拟合。相反，我们在优化D的k个步骤和优化G的一个步骤之间交替进行，只要G变化足够慢，D就会保持在其最优解附近，这种策略类似于SML/PCD：训练从一个学习步骤到下一个学习步骤保持来自马尔可夫链的样本，该过程在算法1中正式给出。</p>
+<p>在实际应用中，公式1可能无法为G提供足够的梯度来学习。在学习的早期，当G较差时，D可以很有信心地拒绝样本，因为它们与训练数据明显不同。在这种情况下，log(1 - D(G(z)))饱和，与其训练G去最小化log(1 - D(G(z))不如训练G去最大化logD(G(z))这一目标函数的结果与动态函数相同，但在学习中提供了更强的学习效果</p>
+<p><img src="https://pic1.zhimg.com/v2-65d5243436c881857d584c095a8f7270_r.jpg" alt="img"></p>
+<blockquote>
+<p>注：图中的<strong>黑色虚线</strong>表示真实的样本的分布情况，<strong>蓝色虚线</strong>表示判别器判别概率的分布情况，<strong>绿色实线</strong>表示生成样本的分布。Z表示噪声，Z到x表示通过生成器之后的分布的映射情况。<br>我们的目标是使用生成样本分布（绿色实线）去拟合真实的样本分布（黑色虚线），来达到生成以假乱真样本的目的。<br>可以看到在<strong>（a）</strong>状态处于最初始的状态的时候，生成器生成的分布和真实分布区别较大，并且判别器判别出样本的概率不是很稳定，因此会先训练判别器来更好地分辨样本。<br>通过多次训练判别器来达到<strong>（b）</strong>样本状态，此时判别样本区分得非常显著和良好。然后再对生成器进行训练。<br>训练生成器之后达到<strong>（c）</strong>样本状态，此时生成器分布相比之前，逼近了真实样本分布。<br>经过多次反复训练迭代之后，最终希望能够达到<strong>（d）</strong>状态，生成样本分布拟合于真实样本分布，并且判别器分辨不出样本是生成的还是真实的（判别概率均为0.5）。也就是说我们这个时候就可以生成出非常真实的样本啦，目的达到。[<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/92935321#ref_2">2]</a></p>
+</blockquote>
+<h3 id="4-Theoretical-Results"><a href="#4-Theoretical-Results" class="headerlink" title="4. Theoretical Results"></a>4. Theoretical Results</h3><p>生成器G隐式地定义了一个概率分布pg，作为z∼pz得到的样本G(z)的分布。因此，如果有足够的能力和训练时间，我们将使用算法1来收敛pdata。本节的结果是在非参数的情况下得到的，例如我们通过研究概率密度函数空间的收敛性来表示一个具有无限容量的模型。我们将在第4.1节中展示这个极大极小游戏对于pg = pdata有一个全局最优。我们将在4.2节中展示算法1对公式1进行了优化，从而得到了我们想要的结果。</p>
+<p><img src="https://pic1.zhimg.com/v2-4fc7a05931004538ea3b09a6288809e8_r.jpg" alt="img"></p>
+<h3 id="4-1-GlobalOptimalityof-pg-x3D-pdata"><a href="#4-1-GlobalOptimalityof-pg-x3D-pdata" class="headerlink" title="4.1 GlobalOptimalityof pg = pdata"></a>4.1 GlobalOptimalityof pg = pdata</h3><p>首先考虑任意给定发生器G的最优鉴别器D。</p>
+<p><strong>命题 1：</strong>对于固定的G，最优鉴别器D为</p>
+<p><img src="https://pic2.zhimg.com/v2-3e8906cda6bfc0ce337847a5022e6415_r.jpg" alt="img"></p>
+<p><img src="https://pic1.zhimg.com/v2-2c8d190ecb30e271484d8b628980dc24_r.jpg" alt="img"></p>
+<p><strong>定理 1</strong>：当且仅当pg = pdata时，得到虚拟训练准则C(G)的全局最小值。此时，C(G)等于- log4。</p>
+<p><img src="https://pic2.zhimg.com/v2-d3e3501d29c880beb67382a6c440439d_r.jpg" alt="img"></p>
+<h3 id="4-2-Convergence-of-Algorithm1"><a href="#4-2-Convergence-of-Algorithm1" class="headerlink" title="4.2 Convergence of Algorithm1"></a>4.2 Convergence of Algorithm1</h3><p><img src="https://pic4.zhimg.com/v2-bb20dd6380964d2a7ef4bf0b5821e4d7_r.jpg" alt="img"></p>
+<h3 id="5-Experiments"><a href="#5-Experiments" class="headerlink" title="5. Experiments"></a>5. Experiments</h3><p>我们在包括MNIST, theTorontoFace Database (TFD),和CIFAR-10一系列数据集上训练了对抗网络。生成网络使用rectiﬁer linear and sigmoid两种激活函数，而判别器使用maxout激活。应用dropout训练判别器网络。虽然我们的理论框架允许在生成器的中间层使用dropout和其他噪声，但我们只使用噪声作为生成器网络最底层的输入。</p>
+<p>我们通过对G生成的样本拟合高斯Parzen窗口，并报告该分布下的对数似然，来估计pg下测试集数据的概率，高斯分布的参数σ是通过交叉验证的验证集。结果见表1。这种估计可能性的方法有一些高的方差，在高维空间中表现不好，但它是我们所知道的最好的方法。能抽样但不能估计可能性的进化能直接激发对如何评价这些模型的进一步研究。</p>
+<p><img src="https://pic4.zhimg.com/v2-c381eaaf1037a875c0343946a6d7075f_r.jpg" alt="img"></p>
+<p>在图2和图3中，我们展示了训练后从生成器网络中抽取的样本。虽然我们不能断言这些样本比现有方法生成的样本更好，但我们认为这些样本至少与文献中更好的生成模型具有竞争力，并突出了对抗性框架的潜力。</p>
+<p><img src="https://pic1.zhimg.com/v2-bcc1f7fdd9059db1cc4dc3c1c7577f44_r.jpg" alt="img"></p>
+<p><img src="https://pic2.zhimg.com/v2-f0a5ba0012ac4a5b3bc7c589187ced81_r.jpg" alt="img"></p>
+<h3 id="6-Advantages-and-disadvantages"><a href="#6-Advantages-and-disadvantages" class="headerlink" title="6. Advantages and disadvantages"></a>6. Advantages and disadvantages</h3><p>与以前的建模框架相比，这个新框架有优点也有缺点。缺点主要是没有显式表示的pg (x)，在训练时D必须与G同步。它的优点是不需要使用马尔科夫链，只使用backprop来获得梯度，在学习过程中不需要推理，可以将多种函数合并到模型中。表2总结了生成式对抗网与其他生成式建模方法的比较。</p>
+<p><img src="https://pic2.zhimg.com/v2-ab97a395c2ea55b7449f1fa2c70251e9_r.jpg" alt="img"></p>
+<h3 id="7-Conclusions-and-future-work"><a href="#7-Conclusions-and-future-work" class="headerlink" title="7. Conclusions and future work"></a>7. Conclusions and future work</h3><p><strong>这个框架允许许多简单的扩展：</strong></p>
+<ol>
+<li>将c作为G和D的输入，可以得到条件生成模型p(x | c)。</li>
+<li>学习近似推理：可以利用一个辅助网络在给定x时来预测z。这与wake-sleep算法训练的推理网络类似，但具有在生成器网络完成训练后，可以对固定生成器网络进行推理网络训练的优点。</li>
+<li>通过训练一系列共享参数的条件模型，可以近似地对所有条件p(xS | x)进行建模，其中s是x指标的子集。本质上，我们可以使用对抗网来实现确定性MP-DBM[11]的随机扩展。</li>
+<li>半监督学习:当有限的标记数据可用时，鉴别器或推理器的特性可能会降低分类器的性能。</li>
+<li>效率改进:在培训过程中，通过划分更好的方法来协调G和D，或者确定更好的z分布，可以大大加快训练的速度。</li>
+</ol>
+<p><strong>本文证明了对抗性建模框架的可行性，表明这些研究方向是有用的。</strong></p>
 
                 
             </div>
@@ -458,7 +480,7 @@ docker run -d \
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://kdxy2233.github.io/2022/07/06/2022-7-6/">https://kdxy2233.github.io/2022/07/06/2022-7-6/</a>
+                    <a href="https://kdxy2233.github.io/2022/07/21/generative-adversarial-nets/">https://kdxy2233.github.io/2022/07/21/generative-adversarial-nets/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -496,8 +518,8 @@ docker run -d \
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%97%A5%E5%BF%97/">
-                                    <span class="chip bg-color">日志</span>
+                                <a href="/tags/%E8%AE%BA%E6%96%87/">
+                                    <span class="chip bg-color">论文</span>
                                 </a>
                             
                         </div>
@@ -580,6 +602,51 @@ docker run -d \
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2022/07/30/jin-zhi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="2022-07-30 日志">
+                        
+                        <span class="card-title">2022-07-30 日志</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-30
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            kdxy2233
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2022/07/18/2022-7-18/">
                     <div class="card-image">
                         
@@ -596,53 +663,8 @@ docker run -d \
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-18
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            kdxy2233
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%97%A5%E5%BF%97/">
-                        <span class="chip bg-color">日志</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/07/04/2022-7-4/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="2022-07-04 日志">
-                        
-                        <span class="card-title">2022-07-04 日志</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-18
                             </span>
                         <span class="publish-author">
                             
